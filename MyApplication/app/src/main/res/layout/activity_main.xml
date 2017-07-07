@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="at.sallaberger.thomas.myapplication.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/activity_main_btn_addUser"
+        android:layout_width="@dimen/btn_width_small"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/tv_btn_addUser"
+        tools:layout_editor_absoluteY="80dp"
+        tools:layout_editor_absoluteX="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/activity_main_btn_deleteUser"
+        android:layout_width="@dimen/btn_width_small"
+        android:layout_height="wrap_content"
+        android:text="delete user"
+        tools:layout_editor_absoluteY="151dp"
+        tools:layout_editor_absoluteX="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/activity_main_rv_user_list"
+        android:layout_width="match_parent"
+        android:layout_height="213dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/activity_main_btn_addUser"></android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

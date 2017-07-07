@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">My Application</string>
+
+    <!-- DIMENSIONS -->
+    <dimen name="label_text_size">18dp</dimen>
+    <dimen name="btn_width_small">120dp</dimen>
+
+
+    <!-- general strings -->
+    <string name = "btn_ok">OK</string>
+    <string name="btn_cancel">abbrechen</string>
+
+    <!-- activity main -->
+    <string name="tv_btn_addUser">neu</string>
+
+    <!-- activity addUser -->
+    <string name="dialog_addUser">Benutzer hinzufügen</string>
+    <string name="et_username_hint">Name</string>
+    <string name="cb_remindme">an bevorstehende Tests erinnern?</string>
+    <string name="error_username_invalid"> Benutzername zu kurz</string>
+    <string name="user_was_added">Benutzer erfolgreich hinzugefügt</string>
+
+
 </resources>
