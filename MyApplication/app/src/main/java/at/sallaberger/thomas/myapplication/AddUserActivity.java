@@ -2,11 +2,9 @@ package at.sallaberger.thomas.myapplication;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -15,15 +13,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import model.User;
+import model.UserTable;
 
 public class AddUserActivity extends Activity {
 
-    private Button btnOk,btnCancel;
+    private static final int MIN_USERNAME_LENGTH = 3;
+    private Button btnOk;
+    private Button btnCancel;
     private CheckBox cbRemindMe;
     private EditText etUsername;
     private TextView tvUsernameValid;
-
-    private final int MIN_USERNAME_LENGTH = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,35 +42,40 @@ public class AddUserActivity extends Activity {
                 String userNameEditTextValue = etUsername.getText().toString();
 
                 if(userNameEditTextValue != null && userNameEditTextValue.length()>=MIN_USERNAME_LENGTH){
-                    User deleteMe = new User(etUsername.getText().toString());
-                    deleteMe.insertIntoDatabase(MainActivity.database);
-                    Toast.makeText(getApplicationContext(),R.string.user_was_added,Toast.LENGTH_SHORT).show();
+                    User insertMe = new User(etUsername.getText().toString());
+                    if(UserTable.getInstance().getFromDataBase(MainActivity.getInstance().getDatabase(),insertMe)==null){
+                        UserTable.getInstance().insertIntoDataBase(MainActivity.getInstance().getDatabase(), insertMe);
+                        DebugToast.showDebugToast(getApplicationContext(),R.string.user_was_added,Toast.LENGTH_SHORT);
+                        finish();
+                    }else{
+                        DebugToast.showDebugToast(getApplicationContext(),R.string.user_already_exists,Toast.LENGTH_SHORT);
+                        etUsername.setTextColor(Color.RED);
+                    }
                 }else{
-                    Toast.makeText(getApplicationContext(),R.string.error_username_invalid,Toast.LENGTH_SHORT).show();
+                    DebugToast.showDebugToast(getApplicationContext(),R.string.error_username_invalid,Toast.LENGTH_SHORT);
                     etUsername.setTextColor(Color.RED);
                 }
             }
         });
 
-        etUsername.addTextChangedListener(new TextWatcher() {
+        etUsername.addTextChangedListener(new MyTextChangeListener() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if(etUsername.getText().toString().length()>=4){
-                    tvUsernameValid.setVisibility(View.INVISIBLE);
-                    etUsername.setTextColor(Color.BLACK);
-                }else {
-                    tvUsernameValid.setVisibility(View.VISIBLE);
-                    etUsername.setTextColor(Color.RED);
+                public void afterTextChanged(Editable s) {
+                    String wantedUserName = etUsername.getText().toString();
+                    if(wantedUserName.length()>=4){
+                        if(UserTable.getInstance().getFromDataBase(MainActivity.getInstance().getDatabase(),new User(wantedUserName)) != null){
+                            etUsername.setTextColor(Color.RED);
+                            tvUsernameValid.setVisibility(View.VISIBLE);
+                            tvUsernameValid.setText(R.string.user_already_exists);
+                        }else{
+                            etUsername.setTextColor(Color.BLACK);
+                            tvUsernameValid.setVisibility(View.INVISIBLE);
+                        }
+                    }else {
+                        tvUsernameValid.setVisibility(View.VISIBLE);
+                        etUsername.setTextColor(Color.RED);
+                    }
                 }
-            }
         });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +85,5 @@ public class AddUserActivity extends Activity {
             }
         });
     }
-
 
 }

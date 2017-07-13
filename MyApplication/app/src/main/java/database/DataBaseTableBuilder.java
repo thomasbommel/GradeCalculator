@@ -2,9 +2,6 @@ package database;
 
 import android.provider.BaseColumns;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static database.DataBaseField.DataBaseFieldType.INTEGER;
 import static database.DataBaseField.Modifiers.AUTOINCREMENT;
 import static database.DataBaseField.Modifiers.PRIMARY_KEY;
@@ -55,7 +52,7 @@ public class DataBaseTableBuilder {
     public String build(){
         String returnString = createTableString.toString();
         if(returnString.lastIndexOf(',')==returnString.length()-1){
-            returnString = returnString.substring(0,returnString.lastIndexOf(","));
+            returnString = returnString.substring(0,returnString.lastIndexOf(','));
         }
         returnString+=");";
         return returnString;

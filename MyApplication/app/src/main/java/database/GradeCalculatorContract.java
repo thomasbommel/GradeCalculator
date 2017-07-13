@@ -10,17 +10,9 @@ public class GradeCalculatorContract implements BaseColumns{
 
     private GradeCalculatorContract() {}
 
-    public static class User extends GradeCalculatorContract  {
-        public static final String TABLE_NAME = "user";
-        public static final String COLUMN_NAME = "name";
-        public static final String COLUMN_REMINDME = "remindme";
-    }
 
-    public static class Schoolyear extends GradeCalculatorContract{
-        public static final String TABLE_NAME = "schoolyear";
-        public static final String COLUMN_NAME = "name";
-        public static final String COLUMN_USERID = "user_id";
-    }
+
+
 
     public static class Subject extends GradeCalculatorContract{
         public static final String TABLE_NAME = "subject";

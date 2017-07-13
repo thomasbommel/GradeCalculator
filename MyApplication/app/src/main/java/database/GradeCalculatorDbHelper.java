@@ -5,17 +5,26 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import static database.DataBaseField.DataBaseFieldType.*;
-import static database.DataBaseField.Modifiers.*;
-import static database.GradeCalculatorContract.*;
+import model.SchoolYearTable;
+import model.UserTable;
+
+import static database.DataBaseField.DataBaseFieldType.DATE;
+import static database.DataBaseField.DataBaseFieldType.FLOAT;
+import static database.DataBaseField.DataBaseFieldType.INTEGER;
+import static database.DataBaseField.DataBaseFieldType.TEXT;
+import static database.GradeCalculatorContract.GradingKey;
+import static database.GradeCalculatorContract.GradingScheme;
+import static database.GradeCalculatorContract.Subject;
+import static database.GradeCalculatorContract.SubjectOfYear;
+import static database.GradeCalculatorContract.Test;
 
 /**
- * Created by Sallaberger on 24.06.2017.
+ * Created by Sallaberger on 07.07.2017.
  */
 
 public class GradeCalculatorDbHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "gradeCalculator.db";
+    private static final String DATABASE_NAME = "gradeCalculator_000001.db";
     private static final int DATABASE_VERSION = 1;
 
     public GradeCalculatorDbHelper(Context context) {
@@ -29,28 +38,15 @@ public class GradeCalculatorDbHelper extends SQLiteOpenHelper {
     }
 
     private void createTables(SQLiteDatabase db) {
-        createUserTable(db);
-        createSchoolYearTable(db);
-    }
-
-    private void createUserTable(SQLiteDatabase db) {
-        String createUserTableString = new DataBaseTableBuilder()
-                .addTableName(User.TABLE_NAME)
-                .addIDColumn()
-                .addParameter(User.COLUMN_NAME, TEXT, NOT_NULL)
-                .addParameter(User.COLUMN_REMINDME, BOOLEAN,NOT_NULL,DEFAULT,TRUE)
-                .build();
-        db.execSQL(createUserTableString);
-    }
-
-    private void createSchoolYearTable(SQLiteDatabase db){
-        String createSchoolYearTableString = new DataBaseTableBuilder()
-                .addTableName(Schoolyear.TABLE_NAME)
-                .addIDColumn()
-                .addParameter(Schoolyear.COLUMN_NAME, TEXT)
-                .addParameter(Schoolyear.COLUMN_USERID, INTEGER)
-                .build();
-        db.execSQL(createSchoolYearTableString);
+        Log.i(this.getClass().toString(),"--------- TABLE CREATION STARTED -------------\n");
+        UserTable.getInstance().createTable(db);
+        SchoolYearTable.getInstance().createTable(db);
+        createSubjectTable(db);
+        createSubjectOfYearTable(db);
+        createGradingSchemeTable(db);
+        createGradingKeyTable(db);
+        createTestTable(db);
+        Log.i(this.getClass().toString(),"--------- TABLE CREATION ENDED -------------\n");
     }
 
     private void createSubjectTable(SQLiteDatabase db){
@@ -110,12 +106,14 @@ public class GradeCalculatorDbHelper extends SQLiteOpenHelper {
     // --- ON UPGRADE ---------------------------------------------------
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+ User.TABLE_NAME);//TODO change to the real updates, currently drops db, so all data is lost(!)
-        db.execSQL("DROP TABLE IF EXISTS "+ Schoolyear.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+ Subject.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+ GradingScheme.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+ GradingKey.TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+ Test.TABLE_NAME);
+        UserTable.getInstance().dropTable(db);
+        SchoolYearTable.getInstance().dropTable(db);
+        final String dropTable = "DROP TABLE IF EXISTS ";
+        //TODO
+        db.execSQL(dropTable+ Subject.TABLE_NAME);
+        db.execSQL(dropTable+ GradingScheme.TABLE_NAME);
+        db.execSQL(dropTable+ GradingKey.TABLE_NAME);
+        db.execSQL(dropTable+ Test.TABLE_NAME);
         onCreate(db);
     }
 }

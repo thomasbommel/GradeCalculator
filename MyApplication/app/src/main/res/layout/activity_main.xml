@@ -6,37 +6,25 @@
     android:layout_height="match_parent"
     tools:context="at.sallaberger.thomas.myapplication.MainActivity">
 
-    <Button
-        android:id="@+id/activity_main_btn_addUser"
-        android:layout_width="@dimen/btn_width_small"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_btn_addUser"
-        tools:layout_editor_absoluteY="80dp"
-        tools:layout_editor_absoluteX="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:id="@+id/activity_main_btn_deleteUser"
-        android:layout_width="@dimen/btn_width_small"
-        android:layout_height="wrap_content"
-        android:text="delete user"
-        tools:layout_editor_absoluteY="151dp"
-        tools:layout_editor_absoluteX="48dp"
+    <ImageButton
+        android:id="@+id/activity_main_ibtn_addUser"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height_small"
+        android:src="@drawable/ic_add_black_24dp"
+        android:layout_marginTop="16dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/activity_main_rv_user_list"
         android:layout_width="match_parent"
         android:layout_height="213dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/activity_main_btn_addUser"></android.support.v7.widget.RecyclerView>
+        android:layout_below="@+id/activity_main_ibtn_addUser"></android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

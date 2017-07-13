@@ -12,69 +12,70 @@ import android.widget.TextView;
 import java.util.List;
 
 import at.sallaberger.thomas.myapplication.R;
+import model.SchoolYear;
+import model.SchoolYearTable;
 import model.User;
-import model.UserTable;
 
 /**
  * Created by Sallaberger on 24.06.2017.
  */
 
-public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.UserListViewHolder>{
+public class SchoolYearListAdapter extends RecyclerView.Adapter<SchoolYearListAdapter.SchoolYearListViewHolder>{
     private final ListItemClickListener onClickListener;
-    private  List<User> userList;
-
-    public UserListAdapter(ListItemClickListener listener, List<User> userList){
-        this.onClickListener=listener;
-        this.userList = userList;
-    }
+    private List<SchoolYear> schoolYearList;
 
     public interface ListItemClickListener{
         void onListItemClick(int clickedItemIndex);
     }
 
+    public SchoolYearListAdapter(ListItemClickListener listener, List<SchoolYear> schoolYearModelList){
+        this.onClickListener=listener;
+        this.schoolYearList = schoolYearModelList;
+    }
+
     @Override
-    public UserListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SchoolYearListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        int layoutIdForListItem = R.layout.user_list_item;
+        int layoutIdForListItem = R.layout.schoolyear_list_item;
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = false;
 
         View view = inflater.inflate(layoutIdForListItem,parent,shouldAttachToParentImmediately);
-        return new UserListViewHolder(view);
+        return new SchoolYearListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(UserListViewHolder holder, int position) {
+    public void onBindViewHolder(SchoolYearListViewHolder holder, int position) {
         Log.d(getClass().toString(),"# "+position);
         holder.bind(position);
     }
 
     @Override
     public int getItemCount() {
-        return userList.size();
+        return schoolYearList.size();
     }
 
-    public void refresh(SQLiteDatabase database){
-       userList =  UserTable.getInstance().getAllFromDataBase(database);
-        Log.e(this.getClass().toString(),"refresh ...userListSize "+userList.size());
-       notifyDataSetChanged();
+    public void refresh(SQLiteDatabase database, User user){
+        schoolYearList = SchoolYearTable.getInstance().getAllFromDataBaseForUser(database, user);
+        notifyDataSetChanged();
     }
-
 
     /**
      * determines how an individual user_list entry is displayed
      */
-    public class UserListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
-        private TextView tvUserListItem;
+    public class SchoolYearListViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
+        private TextView tvSchoolYearItem;
 
-        public UserListViewHolder(View itemView) {
+        public SchoolYearListViewHolder(View itemView) {
             super(itemView);
-            tvUserListItem = (TextView) itemView.findViewById(R.id.tv_user_list_item);
+            tvSchoolYearItem = (TextView) itemView.findViewById(R.id.tv_schoolyear_list_item);
             itemView.setOnClickListener(this);
         }
 
         protected void bind(int position){
-             tvUserListItem.setText(userList.get(position).getId()+" "+userList.get(position).getName());
+            if(schoolYearList.size()>position){
+                tvSchoolYearItem.setText(schoolYearList.get(position).getId()+" "+schoolYearList.get(position).getName()+" "+schoolYearList.get(position).getUserId());
+            }
         }
 
         @Override

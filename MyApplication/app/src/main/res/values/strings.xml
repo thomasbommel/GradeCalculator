@@ -1,13 +1,17 @@
 <resources>
     <string name="app_name">My Application</string>
+    <bool name="debug_mode">true</bool>
 
     <!-- DIMENSIONS -->
     <dimen name="label_text_size">18dp</dimen>
     <dimen name="btn_width_small">120dp</dimen>
-
+    <dimen name="btn_height_small">45dp</dimen>
+    <dimen name="btn_height_small_doubled">55dp</dimen>
+    <dimen name="btn_textSize">15dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
 
     <!-- general strings -->
-    <string name = "btn_ok">OK</string>
+    <string name="btn_ok">OK</string>
     <string name="btn_cancel">abbrechen</string>
 
     <!-- activity main -->
@@ -19,6 +23,19 @@
     <string name="cb_remindme">an bevorstehende Tests erinnern?</string>
     <string name="error_username_invalid"> Benutzername zu kurz</string>
     <string name="user_was_added">Benutzer erfolgreich hinzugefügt</string>
+    <string name="user_already_exists">Benutzername bereits vergeben</string>
 
+    <!-- activity showUser -->
+    <string name="btn_addYear">Schuljahr hinzufügen</string>
+
+    <!-- activity userSettings -->
+    <string name="btn_delete_user">Benutzer löschen</string>
+
+    <!-- activity addSchoolYear -->
+    <string name="dialog_addSchoolYear">Schuljahr hinzufügen</string>
+    <string name="et_schoolyear_hint">Name</string>
+    <string name="error_schoolyear_invalid"> Name zu kurz</string>
+    <string name="schoolyear_was_added">Schuljahr erfolgreich hinzugefügt</string>
+    <string name="schoolyear_already_exists">Schuljahr bereits vergeben</string>
 
 </resources>
