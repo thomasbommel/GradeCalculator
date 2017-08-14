@@ -42,7 +42,6 @@ public class GradeCalculatorDbHelper extends SQLiteOpenHelper {
         UserTable.getInstance().createTable(db);
         SchoolYearTable.getInstance().createTable(db);
         createSubjectTable(db);
-        createSubjectOfYearTable(db);
         createGradingSchemeTable(db);
         createGradingKeyTable(db);
         createTestTable(db);
@@ -59,14 +58,6 @@ public class GradeCalculatorDbHelper extends SQLiteOpenHelper {
         db.execSQL(createSubjectTableString);
     }
 
-    private void createSubjectOfYearTable(SQLiteDatabase db){
-        String createSubjectOfYearTableString = new DataBaseTableBuilder()
-                .addTableName(SubjectOfYear.TABLE_NAME)
-                .addParameter(SubjectOfYear.COLUMN_YEARID,INTEGER)
-                .addParameter(SubjectOfYear.COLUMN_SUBJECTID, INTEGER)
-                .build();
-        db.execSQL(createSubjectOfYearTableString);
-    }
 
     private void createGradingSchemeTable(SQLiteDatabase db){
         String createGradingSchemeTableString = new DataBaseTableBuilder()
