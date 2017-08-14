@@ -1,0 +1,5 @@
+
+Hsquid:S1068".Remove this unused "cbRemindMe" private field.(ÜÝí§ûÿÿÿÿ
+ssquid:S1450"YRemove the "cbRemindMe" field and declare it as a local variable in the relevant methods.(ÜÝí§ûÿÿÿÿ
+rsquid:S1450"XRemove the "btnCancel" field and declare it as a local variable in the relevant methods.(ˆ½öêúÿÿÿÿ
+nsquid:S1450"TRemove the "btnOk" field and declare it as a local variable in the relevant methods.(¬š×Öüÿÿÿÿ

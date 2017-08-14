@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="at.sallaberger.thomas.myapplication.AddSchoolYearActivity">
+    tools:context="at.sallaberger.thomas.myapplication.activities.AddSchoolYearActivity">
 
 
     <EditText
@@ -14,13 +14,13 @@
         android:ems="10"
         android:hint="@string/et_schoolyear_hint"
         android:inputType="textPersonName"
-        android:layout_marginTop="105dp"
+        android:layout_marginTop="107dp"
+        android:textSize="@dimen/label_text_size"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/activity_add_schoolyear_btn_cancel"
-        android:layout_alignStart="@+id/activity_add_schoolyear_btn_cancel"
         android:layout_alignRight="@+id/activity_add_schoolyear_btn_ok"
         android:layout_alignEnd="@+id/activity_add_schoolyear_btn_ok"
-        android:textSize="@dimen/label_text_size"/>
+        android:layout_alignLeft="@+id/activity_add_schoolyear_btn_cancel"
+        android:layout_alignStart="@+id/activity_add_schoolyear_btn_cancel" />
 
     <Button
         android:id="@+id/activity_add_schoolyear_btn_ok"
@@ -30,31 +30,38 @@
         android:textSize="@dimen/btn_textSize"
         android:layout_alignBaseline="@+id/activity_add_schoolyear_btn_cancel"
         android:layout_alignBottom="@+id/activity_add_schoolyear_btn_cancel"
-        android:layout_toRightOf="@+id/activity_add_schoolyear_tv_schoolyearname_validate"
-        android:layout_toEndOf="@+id/activity_add_schoolyear_tv_schoolyearname_validate" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="42dp"
+        android:layout_marginEnd="42dp" />
 
     <Button
         android:id="@+id/activity_add_schoolyear_btn_cancel"
         android:layout_width="@dimen/btn_width_small"
         android:layout_height="wrap_content"
         android:text="@string/btn_cancel"
-        android:layout_marginTop="47dp"
         android:textSize="@dimen/btn_textSize"
+        android:layout_marginTop="56dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
         android:layout_below="@+id/activity_add_schoolyear_tv_schoolyearname_validate"
-        android:layout_toLeftOf="@+id/activity_add_schoolyear_tv_schoolyearname_validate"
-        android:layout_toStartOf="@+id/activity_add_schoolyear_tv_schoolyearname_validate" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/activity_add_schoolyear_tv_schoolyearname_validate"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
         android:text="@string/error_schoolyear_invalid"
         android:textColor="@android:color/holo_red_light"
         android:textSize="@dimen/btn_textSize"
-        android:layout_marginTop="21dp"
         android:layout_below="@+id/activity_add_schoolyear_et_schoolyearname"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_alignRight="@+id/activity_add_schoolyear_et_schoolyearname"
+        android:layout_alignEnd="@+id/activity_add_schoolyear_et_schoolyearname"
+        android:layout_alignLeft="@+id/activity_add_schoolyear_et_schoolyearname"
+        android:layout_alignStart="@+id/activity_add_schoolyear_et_schoolyearname" />
 
 
 </RelativeLayout>

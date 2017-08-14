@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,15 +17,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddUserActivity"
+            android:name=".activities.AddUserActivity"
             android:label="@string/dialog_addUser"
             android:theme="@android:style/Theme.Holo.Light.Dialog.MinWidth" />
-        <activity android:name=".ShowUserActivity" />
-        <activity android:name=".UserSettingsUserActivity" />
+        <activity android:name=".activities.ShowUserActivity" />
+        <activity android:name=".activities.UserSettingsUserActivity" />
         <activity
-            android:name=".AddSchoolYearActivity"
+            android:name=".activities.AddSchoolYearActivity"
             android:label="@string/dialog_addSchoolYear"
             android:theme="@android:style/Theme.Holo.Light.Dialog.MinWidth" />
+        <activity android:name=".activities.ShowSchoolYearActivity" />
+        <activity android:name=".activities.SchoolYearSettingsActivity"></activity>
     </application>
 
 </manifest>

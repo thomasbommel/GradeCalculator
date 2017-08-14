@@ -1,52 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="at.sallaberger.thomas.myapplication.activities.AddUserActivity">
 
     <EditText
         android:id="@+id/activity_add_user_et_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/activity_add_user_cb_remindMe"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/activity_add_user_cb_remindMe"
         android:layout_marginTop="105dp"
         android:ems="10"
         android:hint="@string/et_username_hint"
         android:inputType="textPersonName"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/activity_add_user_cb_remindMe"
-        android:layout_alignStart="@+id/activity_add_user_cb_remindMe"
-        android:layout_alignRight="@+id/activity_add_user_cb_remindMe"
-        android:layout_alignEnd="@+id/activity_add_user_cb_remindMe"/>
+        android:layout_alignLeft="@+id/activity_add_user_btn_cancel"
+        android:layout_alignStart="@+id/activity_add_user_btn_cancel" />
 
     <CheckBox
         android:id="@+id/activity_add_user_cb_remindMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_add_user_et_username"
         android:layout_marginTop="42dp"
         android:checked="true"
         android:text="@string/cb_remindme"
-        android:layout_below="@+id/activity_add_user_et_username"
-        android:layout_centerHorizontal="true"
-        android:textSize="@dimen/label_text_size" />
+        android:textSize="@dimen/label_text_size"
+        android:layout_alignRight="@+id/activity_add_user_btn_ok"
+        android:layout_alignEnd="@+id/activity_add_user_btn_ok"
+        android:layout_alignLeft="@+id/activity_add_user_btn_cancel"
+        android:layout_alignStart="@+id/activity_add_user_btn_cancel" />
 
     <Button
         android:id="@+id/activity_add_user_btn_ok"
         android:layout_width="@dimen/btn_width_small"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/activity_add_user_cb_remindMe"
-        android:layout_alignStart="@+id/activity_add_user_cb_remindMe"
-        android:layout_below="@+id/activity_add_user_cb_remindMe"
-        android:layout_marginTop="67dp"
-        android:text="@string/btn_ok" />
+        android:text="@string/btn_ok"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_alignBaseline="@+id/activity_add_user_btn_cancel"
+        android:layout_alignBottom="@+id/activity_add_user_btn_cancel"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/activity_add_user_btn_cancel"
         android:layout_width="@dimen/btn_width_small"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/activity_add_user_cb_remindMe"
-        android:layout_alignRight="@+id/activity_add_user_cb_remindMe"
-        android:layout_alignTop="@+id/activity_add_user_btn_ok"
-        android:text="@string/btn_cancel" />
+        android:text="@string/btn_cancel"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_below="@+id/activity_add_user_cb_remindMe"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
 
     <TextView
         android:id="@+id/activity_add_user_tv_username_validate"
@@ -56,7 +66,10 @@
         android:textColor="@android:color/holo_red_light"
         android:layout_below="@+id/activity_add_user_et_username"
         android:layout_alignLeft="@+id/activity_add_user_et_username"
-        android:layout_alignStart="@+id/activity_add_user_et_username" />
+        android:layout_alignStart="@+id/activity_add_user_et_username"
+        android:layout_marginTop="8dp"
+        android:layout_alignRight="@+id/activity_add_user_et_username"
+        android:layout_alignEnd="@+id/activity_add_user_et_username" />
 
 
 </RelativeLayout>

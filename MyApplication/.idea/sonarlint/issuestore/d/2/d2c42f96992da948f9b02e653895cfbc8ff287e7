@@ -1,0 +1,4 @@
+
+Ysquid:UselessImportCheck"8Remove this unused import 'model.database.objects.User'.(Ÿ„Ù+
+Zsquid:UselessImportCheck"1Remove this unused import 'android.app.Activity'.(á Õ∆8’≥÷Ë”+
+jsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(à‹Œ√8’≥÷Ë”+

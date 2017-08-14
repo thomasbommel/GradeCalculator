@@ -3,16 +3,17 @@
     <bool name="debug_mode">true</bool>
 
     <!-- DIMENSIONS -->
-    <dimen name="label_text_size">18dp</dimen>
+    <dimen name="label_text_size">18sp</dimen>
     <dimen name="btn_width_small">120dp</dimen>
     <dimen name="btn_height_small">45dp</dimen>
     <dimen name="btn_height_small_doubled">55dp</dimen>
-    <dimen name="btn_textSize">15dp</dimen>
+    <dimen name="btn_textSize">15sp</dimen>
     <dimen name="margin_small">10dp</dimen>
 
     <!-- general strings -->
     <string name="btn_ok">OK</string>
     <string name="btn_cancel">abbrechen</string>
+    <string name="really_delete_question">wirklich löschen?</string>
 
     <!-- activity main -->
     <string name="tv_btn_addUser">neu</string>
@@ -37,5 +38,9 @@
     <string name="error_schoolyear_invalid"> Name zu kurz</string>
     <string name="schoolyear_was_added">Schuljahr erfolgreich hinzugefügt</string>
     <string name="schoolyear_already_exists">Schuljahr bereits vergeben</string>
+
+    <!-- activity schoolyearSettings -->
+    <string name="btn_delete_schoolyear">Schuljahr löschen</string>
+
 
 </resources>

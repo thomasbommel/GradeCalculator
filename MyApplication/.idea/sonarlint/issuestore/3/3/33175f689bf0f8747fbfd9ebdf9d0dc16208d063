@@ -1,0 +1,9 @@
+
+ysquid:S1450"_Remove the "btn_userSettings" field and declare it as a local variable in the relevant methods.(›µÇ´ûÿÿÿÿ
+qsquid:S00116"VRename this field "tv_username" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÔíËüÿÿÿÿ
+isquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(›ë÷q8 ¥ÛèÓ+
+zsquid:S1450"`Remove the "btn_addSchoolYear" field and declare it as a local variable in the relevant methods.(è´Ï¾ûÿÿÿÿ
+wsquid:S00116"\Rename this field "btn_addSchoolYear" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(è´Ï¾ûÿÿÿÿ
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ä¬ıÖ8‚¸»ëÓ+
+vsquid:S00116"[Rename this field "btn_userSettings" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›µÇ´ûÿÿÿÿ
+tsquid:S1450"_Remove the "rvSchoolYearList" field and declare it as a local variable in the relevant methods.(¹ÖŸ

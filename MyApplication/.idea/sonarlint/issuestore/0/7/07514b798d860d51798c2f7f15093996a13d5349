@@ -1,0 +1,5 @@
+
+`squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Üí§„
+Psquid:S2696"6Make the enclosing method "static" or remove this set.(ñõîÙþÿÿÿÿ
+nsquid:S1450"YRemove the "btnAddUser" field and declare it as a local variable in the relevant methods.(ø»·û
+nsquid:S1450"YRemove the "rvUserList" field and declare it as a local variable in the relevant methods.(Š¥ ž

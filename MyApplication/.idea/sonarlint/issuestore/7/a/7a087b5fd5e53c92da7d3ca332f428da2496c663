@@ -1,0 +1,5 @@
+
+jsquid:UselessImportCheck"<Remove this unused import 'model.database.tables.UserTable'.(˜Ì‡ûÿÿÿÿ8ë¾ãêÓ+
+hsquid:MaximumInheritanceDepth"<This class has 6 parents which is greater than 5 authorized.(¯‰Â¯ûÿÿÿÿ
+rsquid:S1450"XRemove the "btnCancel" field and declare it as a local variable in the relevant methods.(ˆ½öêúÿÿÿÿ
+nsquid:S1450"TRemove the "btnOk" field and declare it as a local variable in the relevant methods.(¬š×Öüÿÿÿÿ

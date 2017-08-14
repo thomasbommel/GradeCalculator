@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="at.sallaberger.thomas.myapplication.ShowUserActivity">
+    tools:context="at.sallaberger.thomas.myapplication.activities.ShowUserActivity">
 
     <ImageButton
         android:id="@+id/activity_show_user_btn_addYear"
@@ -49,5 +49,6 @@
         android:layout_marginStart="71dp"
         android:layout_toEndOf="@+id/activity_show_user_btn_addYear"
         android:layout_toRightOf="@+id/activity_show_user_btn_addYear"
-        android:text="TextView" />
+        android:text="username"
+        android:textSize="@dimen/label_text_size"/>
 </RelativeLayout>

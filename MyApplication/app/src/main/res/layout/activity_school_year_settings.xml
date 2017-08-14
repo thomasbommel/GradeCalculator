@@ -4,23 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="at.sallaberger.thomas.myapplication.activities.UserSettingsUserActivity"
+    tools:context="at.sallaberger.thomas.myapplication.activities.SchoolYearSettingsActivity"
     android:orientation="vertical"
     android:weightSum="1">
 
+    tools:context="at.sallaberger.thomas.myapplication.activities.UserSettingsUserActivity">
+
     <TextView
-        android:id="@+id/activity_user_settings_username"
+        android:id="@+id/activity_school_year_settings_schoolyearname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.04"
-        android:text="TextView"
+        android:text="schoolyearname"
         android:textAlignment="center"
+        android:textSize="@dimen/label_text_size"
         android:gravity="center"/>
 
     <Button
-        android:id="@+id/activity_user_settings_btn_delete_user"
+        android:id="@+id/activity_school_year_settings_btn_delete_schoolyear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_delete_user" />
+        android:text="@string/btn_delete_schoolyear" />
+
 
 </LinearLayout>
