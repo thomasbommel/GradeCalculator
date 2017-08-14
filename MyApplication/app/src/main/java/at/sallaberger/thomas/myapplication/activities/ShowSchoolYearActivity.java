@@ -18,6 +18,7 @@ public class ShowSchoolYearActivity extends SchoolYearActivity {
     private TextView tv_schoolyearName;
 
     private ImageButton btn_schoolyearSettings;
+    private ImageButton btn_addSubject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,15 @@ public class ShowSchoolYearActivity extends SchoolYearActivity {
             public void onClick(View v) {
                 Intent showSchoolYearSettingsIntent = new Intent(getApplicationContext(),SchoolYearSettingsActivity.class);
                 startActivity(showSchoolYearSettingsIntent);
+            }
+        });
+
+        btn_addSubject = (ImageButton) findViewById(R.id.activity_show_schoolyear_btn_addSubject);
+        btn_addSubject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addSubjectIntent = new Intent(getApplicationContext(),AddSubjectActivity.class);
+                startActivity(addSubjectIntent);
             }
         });
     }

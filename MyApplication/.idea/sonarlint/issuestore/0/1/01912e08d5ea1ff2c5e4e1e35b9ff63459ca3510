@@ -1,8 +1,0 @@
-
-Tsquid:UselessImportCheck"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ
-€squid:S1450"eRemove the "btn_schoolyearSettings" field and declare it as a local variable in the relevant methods.(ü¡ùD8ÌšáèÓ+
-}squid:S00116"aRename this field "btn_schoolyearSettings" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü¡ùD8ûâßèÓ+
-Šsquid:UselessImportCheck"hRemove this unused import 'at.sallaberger.thomas.myapplication.activities.superactivities.UserActivity'.( àº¹
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×§üàýÿÿÿÿ8’Ã½ëÓ+
-csquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(šøžÔ
-rsquid:S00116"\Rename this field "tv_schoolyearName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Õ©Ð

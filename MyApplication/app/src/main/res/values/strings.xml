@@ -42,5 +42,7 @@
     <!-- activity schoolyearSettings -->
     <string name="btn_delete_schoolyear">Schuljahr löschen</string>
 
+    <!-- activity showSchoolYear -->
+    <string name="btn_add_subject">Fach hinzufügen</string>
 
 </resources>

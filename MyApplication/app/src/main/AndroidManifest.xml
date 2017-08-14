@@ -27,7 +27,8 @@
             android:label="@string/dialog_addSchoolYear"
             android:theme="@android:style/Theme.Holo.Light.Dialog.MinWidth" />
         <activity android:name=".activities.ShowSchoolYearActivity" />
-        <activity android:name=".activities.SchoolYearSettingsActivity"></activity>
+        <activity android:name=".activities.SchoolYearSettingsActivity" />
+        <activity android:name=".activities.AddSubjectActivity"></activity>
     </application>
 
 </manifest>

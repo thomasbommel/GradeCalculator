@@ -17,6 +17,20 @@
         android:layout_marginBottom="8dp" />
 
     <ImageButton
+        android:id="@+id/activity_show_schoolyear_btn_addSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/btn_height_small"
+        android:src="@drawable/ic_add_black_24dp"
+        android:text="@string/btn_add_subject"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginLeft="@dimen/margin_small"
+        />
+
+
+    <ImageButton
         android:id="@+id/activity_show_schoolyear_settings"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/btn_height_small"
